@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to external CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <h1 id="hd">M I N D - E A S E </h1>
+    <div id="cht">
+      <button class="btn" onclick="submitColor('A1');selectButton(this)">
+        A1
+      </button>
+      <button class="btn" onclick="submitColor('A2');selectButton(this)">
+        A2
+      </button>
+      <button class="btn" onclick="submitColor('A3');selectButton(this)">
+        A3
+      </button>
+    </div>
+    <div id="chatbox"></div>
+    <div id="inpbox">
+      <input id="inp" type="text" placeholder="Ask..." />
+      <button id="sub">Send</button>
+    </div>
+
+    <div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+   </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

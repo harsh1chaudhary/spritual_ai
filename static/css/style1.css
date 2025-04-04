@@ -1,0 +1,184 @@
+.nunito {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Change as needed */
+    font-style: normal;
+    
+  }
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(5, 5, 5);
+    height: 100vh;
+    font-family: "Nunito";
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgb(255, 202, 146) 3%, rgb(101, 101, 101) 38%, rgba(0, 0, 0, 0.46) 68%, rgb(255, 187, 0) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+#head{
+    font-size: 40px;
+    background: linear-gradient(to right, rgb(242, 255, 0), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.head1{
+    font-size: 20px;
+    background: linear-gradient(to right, rgb(242, 255, 0), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+#chatboxcht{
+    color: white;
+    
+    background-color: rgb(43, 41, 41,0.1);
+    border: 1px solid rgba(128, 128, 128, 0.138);
+    border-radius: 20px 0 0 20px;
+
+    text-align: center;
+    outline: 0;
+    height: 40px;
+    width: 230px;
+}
+#chatboxcht::placeholder{
+    color: rgba(255, 255, 255, 0.449);
+}
+#chatbox1{
+    background-color: rgb(43, 41, 41,0.1);
+    border-radius: 20px;
+    width:300px;
+    height: 45px;
+
+}
+#chatbut{
+    background-color: rgb(43, 41, 41,0);
+    color: white;
+    
+    border: 0;
+    
+}
+#chatbut:active{
+    background: linear-gradient(to right, rgb(242, 255, 0), rgb(255, 255, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#nav{
+    background-color: rgb(0, 0, 0,0);
+    position: absolute;
+    top:10%;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100vh;
+}
+.bt{
+    color: rgb(230, 230, 230);
+    border: 0.1px solid rgb(255, 255, 255);
+    margin: 5px;
+    border-radius: 100px;
+    height: 30px;
+    background-color: rgba(38, 38, 38, 0.1);
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
