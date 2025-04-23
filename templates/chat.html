@@ -18,21 +18,35 @@
   <body>
     <h1 id="hd">M I N D - E A S E </h1>
     <div id="cht">
-      <button class="btn" onclick="submitColor('A1');selectButton(this)">
-        A1
+      <button id="baymax" class="btn" onclick="submitColor('A1');selectButton(this)">
+        <img src="static/uploads/baymax.jpeg" alt="icon">
       </button>
-      <button class="btn" onclick="submitColor('A2');selectButton(this)">
-        A2
+      <button id="spritual" class="btn" onclick="submitColor('A2');selectButton(this)">
+        <img src="static/uploads/spri.png" alt="icon">
       </button>
       <button class="btn" onclick="submitColor('A3');selectButton(this)">
-        A3
-      </button>
+        <img src="static/uploads/mix.png" alt="icon">
+      </button> 
     </div>
     <div id="chatbox"></div>
     <div id="inpbox">
+
       <input id="inp" type="text" placeholder="Ask..." />
+      
       <button id="sub">Send</button>
+      
     </div>
+
+    <div id="nav">
+      <button class="bt" onclick="window.location.href='http://localhost:4000/'">Conference</button>
+      
+      <button class="bt" onclick="window.location.href='/graph'">Static</button>
+      <button id="vidr" class="bt" >Video</button>
+      <button class="bt" id="nchat" >New Chat</button>
+      
+    </div>
+
+    <div id="videoRecommendation"></div>
 
     <div>
       <div class="wave"></div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Conference</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Video Chat Room</h1>
+
+  <div class="videos">
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  </div>
+
+  <div class="controls">
+    <button id="shareScreenBtn">Share Screen</button>
+  </div>
+
+  <div class="chat-container">
+    <div id="messages"></div>
+    <input id="chatInput" type="text" placeholder="Type..." />
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

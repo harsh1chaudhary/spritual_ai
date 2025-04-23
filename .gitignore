@@ -1,1 +1,8 @@
 .env
+data_extract
+frontend
+gemini_outputs
+hindi_transcripts
+audio
+record.py
+yt.py

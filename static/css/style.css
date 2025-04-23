@@ -7,13 +7,17 @@
 
 #hd {
   position: absolute;
-  left:10px;
+  left: 10px;
   top: 1%;
   margin: 10px;
 
   font-weight: 600;
   font-size: 20px; /* Adjust size as needed */
-  background: linear-gradient(to right, rgb(242, 255, 0,1), rgb(255, 255, 255));
+  background: linear-gradient(
+    to right,
+    var(--bghd-color),
+    rgb(255, 255, 255)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -27,7 +31,8 @@ body {
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: auto;
-  background: linear-gradient(315deg, rgb(255, 202, 146) 3%, rgb(101, 101, 101) 38%, rgba(0, 0, 0, 0.46) 68%, rgb(255, 149, 0) 98%);
+  background: var(--bg-color);
+  /*background: linear-gradient(315deg, rgb(255, 202, 146) 3%, rgb(101, 101, 101) 38%, rgba(0, 0, 0, 0.46) 68%, rgb(255, 149, 0) 98%);*/
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
@@ -66,7 +71,7 @@ body {
 }
 #inp {
   background-color: rgba(22, 22, 22, 0.1);
-  padding:5px;
+  padding: 5px;
   border: none;
   width: 400px;
   height: 60px;
@@ -75,7 +80,7 @@ body {
   color: rgb(227, 227, 227);
   border-radius: 20px 0 0 20px;
 }
-#inp::placeholder{
+#inp::placeholder {
   color: rgb(194, 194, 194);
 }
 #sub {
@@ -91,8 +96,9 @@ body {
 #sub:active {
   background-color: rgba(250, 255, 255, 0);
 }
-#cht .btn {
-  border-radius: 50%;
+.btn {
+  position: relative;
+  border-radius: 50px;
   height: 50px;
   width: 50px;
   margin: 5px;
@@ -100,51 +106,101 @@ body {
   color: rgb(255, 255, 255);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  overflow: hidden;
+
+  transition: 0.5s;
+}
+.btn:hover {
+  transition: 0.5s;
+  height: 60px;
+  width: 60px;
 }
 
-
-
-#chat .btn.active {
-  background: linear-gradient(to right, #ffff00, #ffffff);
+.btn.active {
+  background: linear-gradient(to right, var(--bghd-color), #ffffff);
   color: black;
-  border-color: rgb(255, 255, 0);
+  border-color: var(--bghd-color);
   border-radius: 20px;
   transition: 0.2ms;
 }
+.btn img {
+  position: absolute;
+  top: 0;
+  right: -2px;
 
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#cht {
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.377);
+  margin-top: 5px;
+  transition: 0.2ms;
 
+}
+#cht:hover {
+
+  transition: 0.2ms;
+
+  
+}
 
 @keyframes gradient {
   0% {
-      background-position: 0% 0%;
+    background-position: 0% 0%;
   }
   50% {
-      background-position: 100% 100%;
+    background-position: 100% 100%;
   }
   100% {
-      background-position: 0% 0%;
+    background-position: 0% 0%;
   }
 }
 @keyframes gradient {
   0% {
-      background-position: 0% 0%;
+    background-position: 0% 0%;
   }
   50% {
-      background-position: 100% 100%;
+    background-position: 100% 100%;
   }
   100% {
-      background-position: 0% 0%;
+    background-position: 0% 0%;
   }
 }
 
+#nav {
+  background-color: rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 10%;
+  left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: rgba(255, 255, 255, 0.564) 1px dotted;
+  width: 100px;
+  height: 18vh;
+  border-radius: 10px;
+}
+.bt {
 
-
-
-
-
-
-
-
+  color: rgb(230, 230, 230);
+  border: 0.1px solid rgb(255, 255, 255);
+  margin: 5px;
+  border-radius: 20px;
+  height: 30px;
+  background-color: rgba(38, 38, 38, 0.1);
+}
+.bt:hover {
+  font-size: 14px;
+  transition: 0.2s;
+  background-color: rgb(57, 59, 47);
+}
 
 .wave {
   background: rgb(255 255 255 / 25%);
@@ -175,43 +231,43 @@ body {
 
 @keyframes wave {
   2% {
-      transform: translateX(1);
+    transform: translateX(1);
   }
 
   25% {
-      transform: translateX(-25%);
+    transform: translateX(-25%);
   }
 
   50% {
-      transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 
   75% {
-      transform: translateX(-25%);
+    transform: translateX(-25%);
   }
 
   100% {
-      transform: translateX(1);
+    transform: translateX(1);
   }
 }
 @keyframes wave {
   2% {
-      transform: translateX(1);
+    transform: translateX(1);
   }
 
   25% {
-      transform: translateX(-25%);
+    transform: translateX(-25%);
   }
 
   50% {
-      transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 
   75% {
-      transform: translateX(-25%);
+    transform: translateX(-25%);
   }
 
   100% {
-      transform: translateX(1);
+    transform: translateX(1);
   }
 }
