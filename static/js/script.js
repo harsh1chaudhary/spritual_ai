@@ -2,6 +2,7 @@ const box = document.getElementById("chatbox");
 const baname = document.getElementById("hd");
 const vid = document.getElementById("vidr");
 const valxx = document.getElementById("inpbox");
+const nmic = document.getElementById("nmic");
 let headcolour = "rgb(242, 255, 0)";
 valxx.style.visibility = "hidden";
 box.style.display = "flex";
@@ -99,6 +100,7 @@ function resetChatUI() {
   box.removeAttribute("style");
 
   // Reset #baname (or batbox?) to default style
+  const nmic = document.getElementById("nmic");
   baname.removeAttribute("style");
   document.getElementById("inp").focus();
 }
@@ -106,6 +108,23 @@ function resetChatUI() {
 function recomd() {
   placegini("--Recommended video link---");
   placegini(`https://youtu.be/Ah2Zf1Vi77o?si=M18P_6DtdVjK71Ll`);
+}
+async function fetchRecording(event) {
+  if (event) event.preventDefault(); // stop form from submitting
+
+  try {
+    const response = await fetch("/recording");
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    let text = data.text; // corrected to access the inner text
+
+    console.log("Cleaned Text:", text);
+    place(text); // display it wherever you want
+  } catch (error) {
+    console.error("Failed to fetch recording:", error);
+  }
 }
 
 function spritualtheme() {
@@ -268,7 +287,7 @@ function chatredirtect() {
 }
 
 window.onload = function () {
-  baymaxtheme();
+  spritualtheme();
   const batbox = document.getElementById("batbox");
 
   const baythm = document.getElementById("baymax");
@@ -276,9 +295,11 @@ window.onload = function () {
   const chatbut = document.getElementById("chatbut");
   const sub = document.getElementById("sub");
   const vid = document.getElementById("vidr");
+
   const videoButton = document.getElementById("getVideoButton");
   const videoContainer = document.getElementById("videoRecommendation");
-  const clearBtn = document.getElementById('clearButton');
+  const clearBtn = document.getElementById("nchat");
+
 
   vid.disabled = true;
   if (batbox) {
@@ -320,9 +341,9 @@ window.onload = function () {
           }
         </style>
       `;
-  
+
       box.appendChild(videoContainer);
-  
+
       fetch("/recommend")
         .then((response) => response.json())
         .then((data) => {
@@ -330,7 +351,7 @@ window.onload = function () {
             const video = data.videos[0];
             const videoUrl = video.url;
             const videoTitle = video.title;
-  
+
             videoContainer.innerHTML = `
               <div style="margin-left: 150px;">
                 <iframe width="560" height="315" style="border-radius: 10px;"
@@ -352,25 +373,29 @@ window.onload = function () {
         });
     });
   }
- if (clearBtn){
-  clearBtn.addEventListener('click', () => {
-    fetch('/clear_conversation', {
-      method: 'POST',
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === 'success') {
-          location.reload();  // Refresh the page
-        } else {
-          alert("Failed to clear conversation.");
-        }
+  if (nmic) {
+    nmic.addEventListener("click", fetchRecording);
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      fetch("/clear_conversation", {
+        method: "POST",
       })
-      .catch(err => {
-        console.error("Error:", err);
-        alert("Something went wrong.");
-      });
-  });
-} 
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === "success") {
+            location.reload(); // Refresh the page
+          } else {
+            alert("Failed to clear conversation.");
+          }
+        })
+        .catch((err) => {
+          console.error("Error:", err);
+          alert("Something went wrong.");
+        });
+    });
+  }
 
   if (sub) {
     sub.addEventListener("click", function (event) {
